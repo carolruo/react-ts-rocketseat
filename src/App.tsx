@@ -8,13 +8,17 @@ function App() {
     'Tweet 3',
   ])
 
+  function createTweet() {
+    setTweets([...tweets, 'New Tweet'])
+  }
+
   return (
     <div>
       {tweets.map(t => {
         return <Tweet text={t} />
       })}
 
-      <button>Adicionar Tweet</button>
+      <button onClick={createTweet}> Adicionar Tweet</button>
     </div>
   )
 }
