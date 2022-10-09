@@ -2,6 +2,7 @@ import { useState } from "react"
 import { Tweet } from "./components/Tweet"
 
 import './App.css'
+import { AppRoutes } from "./Routes"
 
 function App() {
   const [tweets, setTweets] = useState<string[]>([
@@ -15,18 +16,19 @@ function App() {
   }
 
   return (
-    <div>
-      {tweets.map(t => {
-        return <Tweet text={t} />
-      })}
+    <AppRoutes />
+    // <div>
+    //   {tweets.map(t => {
+    //     return <Tweet text={t} />
+    //   })}
 
-      <button
-        onClick={createTweet}
-        style={{ backgroundColor: '#8257e6', border: 0, padding: '6px 12px', color: '#FFF' }}
-      >
-        Adicionar Tweet
-      </button>
-    </div>
+    //   <button
+    //     onClick={createTweet}
+    //     style={{ backgroundColor: '#8257e6', border: 0, padding: '6px 12px', color: '#FFF' }}
+    //   >
+    //     Adicionar Tweet
+    //   </button>
+    // </div>
   )
 }
 
